@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VoizFonica</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="dashboard/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Google fonts - Popppins for copy-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800">
+
+
+    <!-- orion icons-->
+    <link rel="stylesheet" href="dashboard/css/orionicons.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="dashboard/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="dashboard/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="dashboard/img/favicon.png?3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="dashboard/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="dashboard/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard/css/dashboard1.css" rel="stylesheet">
+
+
+    <style type="text/css">
+        .footer {
+
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding-top: 100px;}
+        footer{
+            padding:25px 0;
+            text-align:center
+        }
+        footer span.copyright{
+            font-size:90%;
+            line-height:40px;
+            text-transform:none;
+            font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif
+        }
+        footer ul.quicklinks{
+            font-size:90%;
+            line-height:40px;
+            margin-bottom:0;
+            text-transform:none;
+            color: black;
+            font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif
+        }
+        ul.social-buttons{
+            margin-bottom:0
+        }
+        ul.social-buttons li a{
+            font-size:20px;
+            line-height:40px;
+            display:block;
+            width:40px;
+            height:40px;
+            -webkit-transition:all .3s;
+            -moz-transition:all .3s;
+            transition:all .3s;
+            color:#fff;
+            border-radius:100%;
+            outline:0;
+            background-color:#212529
+        }
+        ul.social-buttons li a:active,ul.social-buttons li a:focus,ul.social-buttons li a:hover{
+            background-color:#fed136
+        }
+        #header{
+            background-color: #3056A0;
+            line-height: 70px;
+            color: white;
+            font-size: 3em;
+            text-align: center;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;}
+
+        #contactdetail{
+            border:1px solid #999999;
+            margin: 15px;
+            padding: 15px 5px 5px 5px;
+            text-align: center;
+            width: -webkit-fill-available;
+
+        }
+        .container-fluid{
+            width: -webkit-fill-available;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        * {box-sizing: border-box}
+
+        /* Style tab links */
+        .tablink {
+            background-color: #4680ff;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 33.33%;
+        }
+
+
+        .tablink:hover {
+            background-color: #4680ff;
+        }
+
+        /* Style the tab content (and add height:100% for full page content) */
+        .tabcontent {
+            color: white;
+            display:inline-block;
+            padding: 100px 20px;
+            height: 100%;
+
+        }
+
+    </style>
+</head>
+<center>
+<div id="HTMLtoPDF">
+<div class="d-flex align-items-stretch">
+
+    <div class="page-holder w-100 d-flex flex-wrap">
+        <div id="contactdetail" style="font-size: 20px;margin-top: 10px;margin-bottom: 0px;">
+            <div  th:each="j:${bill}">
+                <div><h2 style="background: black;color: white"><center>INVOICE</center></h2><h1 style="font-family: Kaushan Script;color: black;text-align: left;">VoizFonica</h1></div>
+                <br><br>
+
+                <h1 style="color: black;text-align: center;">PLAN DETAILS</h1>
+
+                <br><br>
+                    <table  id="table" class="table table-striped"  style="border-color:#0076ff;color: black">
+                        <thead>
+                        <tr>
+                            <td><b>PLANS</b></td>
+                            <td><b>TYPE</b></td>
+                            <td><b>VALIDITY</b></td>
+                            <td><b>AMOUNT</b></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td th:text="${j.plan.getName()}">Postpaid</td>
+                            <td th:text="${j.plan.type}">Economic</td>
+                            <td th:text="${j.plan.validity}">90days</td>
+                            <td th:text="${j.plan.amount}" >30</td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                <br><br>
+                <h1 style="color: black;text-align: center;">PAYMENT DETAILS</h1>
+
+                <table  id="table" class="table table-striped"  style="border-color:#0076ff;color: black">
+                    <thead>
+                    <tr>
+                        <td><b>OWNER</b></td>
+                        <td><b>CARD NUMBER</b></td>
+                        <td><b>DATE OF PAYMENT</b></td>
+                        <td><b>TIME</b></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td th:text="${j.payment.Name}">Postpaid</td>
+                        <td th:text="${j.payment.CardNumber}">Economic</td>
+                        <td th:text="${#dates.format(#dates.createNow(), ' dd MMM yyyy')}">90days</td>
+                        <td th:text="${#dates.format(#dates.createNow(), ' HH:mm')}">30</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+</div>
+<center><button type="button" onclick="HTMLtoPDF()" style="align-items: center">Download Invoice</button></center>
+
+<script src="js/jspdf.js"></script>
+<script src="js/jquery-2.1.3.js"></script>
+<script src="js/pdfFromHTML.js"></script>
+
+
+<script>
+    function openPage(pageName,elmnt) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "#bbbbbb";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = "";
+    }
+
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+
+
+</script>
+
+<!-- JavaScript files-->
+<script src="dashboard/vendor/jquery/jquery.min.js"></script>
+<script src="dashboard/vendor/popper.js/umd/popper.min.js"> </script>
+<script src="dashboard/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="dashboard/vendor/jquery.cookie/jquery.cookie.js"> </script>
+<script src="dashboard/vendor/chart.js/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="dashboard/js/front.js"></script>
+</body>
+</html>
